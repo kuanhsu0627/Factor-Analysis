@@ -21,7 +21,7 @@ class Report:
         """
         ### 分組淨值走勢
         plt.style.use('bmh')
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(12, 6), dpi=200)
         for col in self.equity_table.columns:
             if col[0] == 'G':
                 plt.plot(self.equity_table[col], label=col)
@@ -32,7 +32,7 @@ class Report:
 
         ### 多空對沖淨值走勢
         plt.style.use('bmh')
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(12, 6), dpi=200)
         plt.plot(self.equity_table.hedge, label='hedge')
         plt.plot(self.equity_table.benchmark, label='benchmark')
         plt.legend()
@@ -87,7 +87,7 @@ class Report:
                 'Volatility [%]',
                 'MDD [%]',
                 'Win Rate [%]',
-                'Infomation Ratio'
+                'Information Ratio'
             ]
         )
 

@@ -38,7 +38,7 @@ class Backtest:
             payoff_ = (weight * self.payoff).dropna(how='all')
             payoff_table['G'+str(i)] = (payoff_.sum(axis=1) / weight.sum(axis=1)).fillna(0)    
 
-        taiex = pd.read_feather('c:\\Users\\warrantnew.brk\\Desktop\\code\\PROJ\\報酬指數.ftr')
+        taiex = pd.read_feather('/Users/kuanhsu/Desktop/code/Python/FILE/報酬指數.ftr')
         taiex = taiex.set_index('datetime', drop=True)
         taiex.index = pd.to_datetime(taiex.index)
         taiex = taiex.reindex(weight.index)
